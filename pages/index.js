@@ -5,7 +5,6 @@ const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
 const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
-const todoTemplate = document.querySelector("#todo-template");
 const todosList = document.querySelector(".todos__list");
 
 const openModal = (modal) => {
@@ -16,16 +15,11 @@ const closeModal = (modal) => {
   modal.classList.remove("popup_visible");
 };
 
-// The logic in this function should all be handled in the Todo class.
-// const generateTodo = (data) => {
-//   const todoElement = todoTemplate.content
-//     .querySelector(".todo")
-//     .cloneNode(true);
-//   const todoNameEl = todoElement.querySelector(".todo__name");
-//   const todoCheckboxEl = todoElement.querySelector(".todo__completed");
-//   const todoLabel = todoElement.querySelector(".todo__label");
-//   const todoDate = todoElement.querySelector(".todo__date");
-//   const todoDeleteBtn = todoElement.querySelector(".todo__delete-btn");
+//The logic in this function should all be handled in the Todo class.
+const generateTodo = (data) => {
+const todo = new Todo(data, "#todo-template");
+const todoElement = todo.getView();
+return todoElement; 
 
 //   todoNameEl.textContent = data.name;
 //   todoCheckboxEl.checked = data.completed;
@@ -49,16 +43,7 @@ const closeModal = (modal) => {
 //   todoDeleteBtn.addEventListener("click", () => {
 //     todoElement.remove();
 //   });
-
-//   return todoElement;
-// };
-
-class Todo {
-  constructor generateTodo(data, selector){
-    
-  }
-  new Todo(data, selector)
-}
+};
 
 addTodoButton.addEventListener("click", () => {
   openModal(addTodoPopup);
