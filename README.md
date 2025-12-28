@@ -1,14 +1,14 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+This is a simple To Do App. Created to practice functionality and code refactoring for Software Engineer, Casey Driver.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+Todo.js and FormValidator.js have been created to give index.js exported classes, taking over the functions of the validate.js
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+VS Code. HTML, CSS, and JS.
 
 ## Deployment
 
