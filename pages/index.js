@@ -11,12 +11,16 @@ const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 const todosList = document.querySelector(".todos__list");
 
 const section = new Section({
-  items: [], //Pass inital todos
+  items: [initialTodos],
   renderer: () => {
-    //write the function
+    initialTodos.forEach((item) => {
+      renderTodo(item);
+
+    });
   },
   containerSelector: ".todo_list",
-})
+});
+//call section instace's rendertiems method
 
 const openModal = (modal) => {
   modal.classList.add("popup_visible");
@@ -46,7 +50,8 @@ todoFormValidator.enableValidation();
 
 const renderTodo = (item) => {
   const todoEl = generateTodo(item);
-  todosList.append(todoEl);
+  //todosList.append(todoEl);
+  
 };
 
 addTodoForm.addEventListener("submit", (evt) => {
@@ -64,6 +69,6 @@ addTodoForm.addEventListener("submit", (evt) => {
   closeModal(addTodoPopup);
 });
 
-initialTodos.forEach((item) => {
-  renderTodo(item);
-});
+// initialTodos.forEach((item) => {
+//   renderTodo(item);
+// });
