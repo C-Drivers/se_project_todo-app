@@ -5,9 +5,6 @@ class TodoCounter {
       (todoCompleted) => todoCompleted.completed,
     ).length;
     this._total = todos.length;
-    console.log(this._element);
-    console.log(this._completed);
-    console.log(this._total);
     this._updateText();
   }
 
