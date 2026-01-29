@@ -1,15 +1,19 @@
 class Todo {
-  constructor(data, selector) {
+  constructor(data, selector, handleCheck, handleDelete) {
     this._data = data;
     this._templateElement = document.querySelector(selector);
+    this._completed = data.completed;
+    this.handleCheck = handleCheck;
+    this.handleDelete = handleDelete;
   }
 
   _setEventListeners() {
     this._todoCheckboxEl.addEventListener("change", () => {
-      this._data.completed = !this._data.completed;
+      this.handleCheck((this._completed = !this._completed));
     });
 
     this._todoDeleteBtn.addEventListener("click", () => {
+      this.handleDelete();
       this._todoElement.remove();
     });
   }
@@ -31,7 +35,7 @@ class Todo {
           year: "numeric",
           month: "short",
           day: "numeric",
-        }
+        },
       )}`;
     }
   }
