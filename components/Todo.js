@@ -13,7 +13,7 @@ class Todo {
     });
 
     this._todoDeleteBtn.addEventListener("click", () => {
-      this.handleDelete();
+      this.handleDelete(this._completed);
       this._todoElement.remove();
     });
   }
